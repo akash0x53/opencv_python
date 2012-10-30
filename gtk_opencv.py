@@ -32,31 +32,26 @@ class Mirror(gtk.Window):
         self.connect("delete-event",gtk.main_quit)
         self.hbox=gtk.VBox(True,5)
         
-        self.button=gtk.Button("Click")
-        self.button.connect("clicked",self.print_text)
+#        self.button=gtk.Button("Click")
+#       self.button.connect("clicked",self.print_text)
         
         #create drawing area
         self.canvas=gtk.DrawingArea()
         self.canvas.set_size_request(640,480)
         
         self.hbox.pack_start(self.canvas)
-        self.hbox.pack_start(self.button)
+#        self.hbox.pack_start(self.button)
         
         self.add(self.hbox)
         
         self.hbox.show()
         self.canvas.show()
-        self.button.show()
+#       self.button.show()
         
         #connect to expose event
         self.canvas.connect("expose_event",self.draw_on_canvas)
-        
-        
-        #self.button=gtk.Button("Click")
-        #self.button.connect("clicked",self.print_text)
-        #self.add(self.button)
-        #self.button.show()
-        
+       
+       
     def print_text(self,button):
         print "you clicked it..!!"
         
